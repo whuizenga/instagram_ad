@@ -18,19 +18,25 @@ h1 {
   color: #06365f
 }
 header, footer {
-  height: 150px;
-  
+  height: 100px;
+  flex-grow: 1;
+  align-self: center;
 }
 main{
   display: flex;
+  flex-direction: column;
 }
-
+.display {
+  display: flex;
+}
 .footer {
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   margin: 5px;
   color: lightslategrey;
   font-weight: bold;
+  display: inline-block;
 }
 a.footer {
   color: #1c5380;
@@ -62,18 +68,38 @@ p{
 .content {
   display: flex;
   flex-direction: column;
-  align-items: space-around;
-  justify-content: space-around;
+  align-items: space-between;
+  justify-content: space-between;
+  flex-grow: 5;
+}
+.text {
+  margin: 20px;
 }
 
 .advert{
   float:left;
   background: url("../images/frame.png") no-repeat;
-  width: 475px;
+  width: 504px;
   height: 500px;
   border-radius: 30px;
 }
 
 .badges {
   margin: 25px;
+}
+
+@media only screen and (max-width: 800px){
+  .phones{
+    display:none;
+  }
+  main{
+    justify-content: center;
+    align-items: center;
+  }
+  header {
+    display: none;
+  }
+  footer{
+    width: 475px;
+  }
 }
